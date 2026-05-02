@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+  <title id="title">Blue masked frost warrior portrait</title>
+  <desc id="desc">A stylized icy portrait inspired by a blue masked frost warrior in falling snow.</desc>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="25%" r="75%">
+      <stop offset="0%" stop-color="#38536a"/>
+      <stop offset="55%" stop-color="#111b27"/>
+      <stop offset="100%" stop-color="#05070b"/>
+    </radialGradient>
+    <linearGradient id="blue" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#38c9ff"/>
+      <stop offset="45%" stop-color="#0f66c8"/>
+      <stop offset="100%" stop-color="#061c55"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="900" height="900" fill="url(#bg)"/>
+  <g opacity="0.35" stroke="#9ddfff" stroke-width="8">
+    <path d="M16 154c120-92 262-116 426-72M740 40c-72 56-136 116-190 180M80 746c146 14 292-10 438-72"/>
+  </g>
+  <g fill="#fff" opacity="0.85">
+    <circle cx="85" cy="100" r="6"/><circle cx="782" cy="142" r="5"/><circle cx="700" cy="300" r="4"/>
+    <circle cx="146" cy="392" r="5"/><circle cx="812" cy="656" r="6"/><circle cx="258" cy="760" r="4"/>
+  </g>
+  <g transform="translate(450 455)">
+    <path d="M-270 350c28-168 110-270 270-270s242 102 270 270z" fill="#08111c"/>
+    <path d="M-230 350l72-244 158-56 158 56 72 244z" fill="url(#blue)" stroke="#78d8ff" stroke-width="10"/>
+    <path d="M-128 120h256l34 230h-324z" fill="#050a12" opacity="0.45"/>
+    <path d="M-172-58c4-164 72-268 172-268s168 104 172 268c0 124-76 198-172 198S-172 66-172-58z" fill="#111923" stroke="#93dbff" stroke-width="8"/>
+    <path d="M-136-32h272l-30 150H-106z" fill="url(#blue)" stroke="#8fe3ff" stroke-width="8"/>
+    <path d="M-95 5l42 85M-36-10l18 110M36-10L18 100M95 5L53 90" stroke="#050a12" stroke-width="18" stroke-linecap="round"/>
+    <path d="M-122-110c74-42 154-42 244 0" fill="none" stroke="#030508" stroke-width="36" stroke-linecap="round"/>
+    <path d="M-126-100l62 28M126-100L64-72" stroke="#9ee8ff" stroke-width="16" stroke-linecap="round" filter="url(#glow)"/>
+    <path d="M-118-210c46-70 190-70 236 0 18 72 14 126-10 164-64-38-142-38-216 0-24-38-28-92-10-164z" fill="#090e16" stroke="#5d7184" stroke-width="8"/>
+  </g>
+</svg>

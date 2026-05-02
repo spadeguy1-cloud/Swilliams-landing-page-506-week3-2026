@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" role="img" aria-labelledby="title desc">
+    <title id="title">Glowing blue frost emblem</title>
+    <desc id="desc">A stylized blue ice emblem floating above a frozen circular platform.</desc>
+    <defs>
+        <radialGradient id="sky" cx="50%" cy="32%" r="70%">
+            <stop offset="0%" stop-color="#2a8fd5"/>
+            <stop offset="48%" stop-color="#0c2c4c"/>
+            <stop offset="100%" stop-color="#020712"/>
+        </radialGradient>
+        <linearGradient id="ice" x1="0%" x2="100%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#e7fbff"/>
+            <stop offset="48%" stop-color="#62cfff"/>
+            <stop offset="100%" stop-color="#0b66b3"/>
+        </linearGradient>
+        <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+            <feGaussianBlur stdDeviation="9" result="blur"/>
+            <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+    <rect width="900" height="700" fill="url(#sky)"/>
+    <g opacity="0.35" stroke="#b9f1ff" stroke-width="3">
+        <path d="M0 520 C120 470 210 570 330 520 S560 470 690 520 S820 575 900 530" fill="none"/>
+        <path d="M0 590 C170 550 260 630 430 585 S690 550 900 600" fill="none"/>
+    </g>
+    <ellipse cx="450" cy="560" rx="255" ry="64" fill="#03111f" opacity="0.72"/>
+    <ellipse cx="450" cy="548" rx="220" ry="46" fill="#1f99d2" opacity="0.22"/>
+    <g filter="url(#glow)">
+        <polygon points="450,96 620,206 594,412 450,516 306,412 280,206" fill="#05213f" stroke="#97eaff" stroke-width="10"/>
+        <polygon points="450,134 574,226 554,390 450,468 346,390 326,226" fill="url(#ice)" opacity="0.9"/>
+        <path d="M450 156 L450 448 M350 238 L550 386 M550 238 L350 386 M326 304 H574" stroke="#f4fdff" stroke-width="15" stroke-linecap="round" opacity="0.8"/>
+        <path d="M450 134 L450 468" stroke="#0a406d" stroke-width="7" opacity="0.65"/>
+    </g>
+    <g fill="#d8f8ff" opacity="0.75">
+        <circle cx="186" cy="150" r="4"/>
+        <circle cx="716" cy="174" r="5"/>
+        <circle cx="238" cy="382" r="3"/>
+        <circle cx="676" cy="446" r="4"/>
+        <circle cx="780" cy="330" r="3"/>
+        <circle cx="112" cy="300" r="4"/>
+    </g>
+</svg>
