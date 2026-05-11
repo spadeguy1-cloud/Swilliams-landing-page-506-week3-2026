@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" role="img" aria-labelledby="title desc">
+    <title id="title">Frost warrior wielding an ice orb</title>
+    <desc id="desc">A cinematic blue masked warrior holding a glowing ice orb in a snowy arena.</desc>
+    <defs>
+        <linearGradient id="arena" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0%" stop-color="#071420"/>
+            <stop offset="48%" stop-color="#15385a"/>
+            <stop offset="100%" stop-color="#02050b"/>
+        </linearGradient>
+        <radialGradient id="orb" cx="50%" cy="48%" r="48%">
+            <stop offset="0%" stop-color="#f7ffff"/>
+            <stop offset="40%" stop-color="#8deaff"/>
+            <stop offset="100%" stop-color="#0b7fd0"/>
+        </radialGradient>
+        <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+            <feGaussianBlur stdDeviation="10" result="blur"/>
+            <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+    <rect width="900" height="700" fill="url(#arena)"/>
+    <g opacity=".45" stroke="#b9ecff" stroke-width="3">
+        <path d="M52 98 852 98M81 545 818 545M150 170 750 170" opacity=".28"/>
+        <path d="M130 610c165-50 475-44 640 0" opacity=".35"/>
+    </g>
+    <g fill="#ffffff" opacity=".62">
+        <circle cx="135" cy="88" r="3"/><circle cx="232" cy="145" r="2"/><circle cx="710" cy="116" r="3"/>
+        <circle cx="802" cy="250" r="2"/><circle cx="72" cy="308" r="2"/><circle cx="668" cy="438" r="3"/>
+        <circle cx="305" cy="576" r="2"/><circle cx="488" cy="78" r="3"/>
+    </g>
+    <g transform="translate(265 76)">
+        <path d="M188 58h86l25 85-31 72H194l-31-72z" fill="#0a1019" stroke="#84d7ff" stroke-width="7"/>
+        <path d="M185 155h93v190H185z" fill="#06131f"/>
+        <path d="M128 302c30-61 70-93 119-93s89 32 119 93l40 225H88z" fill="#121922" stroke="#64c9ff" stroke-width="8"/>
+        <path d="M185 221h93l39 302H146z" fill="#105aa0"/>
+        <path d="M222 235h20v285h-20z" fill="#7ee5ff" opacity=".4"/>
+        <path d="M115 315 40 508h86l48-158zM349 315l75 193h-86l-48-158z" fill="#18202b" stroke="#70d4ff" stroke-width="7"/>
+        <path d="M97 496h86l-34 92H67zM281 496h86l34 92h82l-30-92z" fill="#080e17"/>
+        <path d="M178 144c35 25 72 25 107 0l-14 74h-79z" fill="#0c5ea8"/>
+        <path d="M188 144h87l-20 50h-47z" fill="#03101a" stroke="#8feaff" stroke-width="5"/>
+        <path d="M198 115h66" stroke="#e8fbff" stroke-width="8" stroke-linecap="round"/>
+        <path d="M182 91c16-28 81-30 99 0" fill="none" stroke="#111924" stroke-width="22" stroke-linecap="round"/>
+    </g>
+    <g filter="url(#glow)">
+        <circle cx="470" cy="390" r="92" fill="url(#orb)"/>
+        <g stroke="#f2ffff" stroke-width="5" fill="none" opacity=".88">
+            <path d="M392 377c52 31 104-17 159 24"/>
+            <path d="M412 326c20 42 97 36 112 91"/>
+            <path d="M410 437c36-49 83-19 121-72"/>
+            <circle cx="470" cy="390" r="68"/>
+        </g>
+    </g>
+    <g stroke="#aeefff" stroke-width="5" fill="none" opacity=".75">
+        <path d="m345 375-116-66M372 420l-154 43M565 384l160-44M540 447l125 82"/>
+    </g>
+</svg>
