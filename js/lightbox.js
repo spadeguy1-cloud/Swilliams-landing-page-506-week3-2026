@@ -13,10 +13,22 @@ const state = {
   isOpen: false,
   index: 0,
   images: [
-    { src: 'images/cat-sleeping.jpg',  caption: 'A sleeping cat placeholder — replace with your own photo' },
-    { src: 'images/dog-happy.jpg',     caption: 'A happy dog placeholder — swap in your own image' },
-    { src: 'images/cat-curious.jpg',   caption: 'A curious cat placeholder — use your travel, pet, or project photos' },
-    { src: 'images/dog-sitting.jpg',   caption: 'A sitting dog placeholder — add as many photos as you like' },
+    {
+      src:     'images/workspace.jpg',
+      caption: 'Where the code gets written — laptop, coffee, and a notebook full of ideas.',
+    },
+    {
+      src:     'images/campus.jpg',
+      caption: 'Campus in autumn — the walk between classes that clears your head.',
+    },
+    {
+      src:     'images/team.jpg',
+      caption: 'Team problem-solving session — three heads are better than one.',
+    },
+    {
+      src:     'images/hike.jpg',
+      caption: 'Weekend summit in the Pacific Northwest — the best way to step away from the screen.',
+    },
   ],
 };
 
@@ -38,8 +50,10 @@ function render() {
     const { src, caption } = state.images[state.index];
     lbImg.setAttribute('src', src);
     lbCap.textContent = caption;
+    lb.setAttribute('aria-hidden', 'false');
     lb.classList.add('open');
   } else {
+    lb.setAttribute('aria-hidden', 'true');
     lb.classList.remove('open');
   }
 }
