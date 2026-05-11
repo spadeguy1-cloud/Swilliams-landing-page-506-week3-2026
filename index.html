@@ -1,44 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name — Personal Page</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CS 506 · Week 3 · Lightbox Starter</title>
+  <link rel="stylesheet" href="css/lightbox.css">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 2rem 1rem;
+      background: #f5f1e8;
+      color: #1a2b4a;
+    }
+    h1 { text-align: center; margin: 0 0 0.5rem; }
+    .subtitle {
+      text-align: center;
+      color: #5a6b7d;
+      font-style: italic;
+      margin-bottom: 2rem;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Your Name Here</h1>
-        <p>Graduate student in software engineering. Coffee enthusiast. Dog person (or cat person — update this bio).</p>
-        <nav>
-            <a href="https://github.com/yourusername">GitHub</a>
-            <a href="https://linkedin.com/in/yourusername">LinkedIn</a>
-        </nav>
-    </header>
 
-    <main>
-        <section class="gallery">
-            <div class="photo">
-                <img src="images/cat-sleeping.jpg" alt="A sleeping cat placeholder">
-                <p>Replace this with your own photo and caption</p>
-            </div>
-            <div class="photo">
-                <img src="images/dog-happy.jpg" alt="A happy dog placeholder">
-                <p>These are placeholder images — swap them out!</p>
-            </div>
-            <div class="photo">
-                <img src="images/cat-curious.jpg" alt="A curious cat placeholder">
-                <p>Use your own travel, pet, food, or project photos</p>
-            </div>
-            <div class="photo">
-                <img src="images/dog-sitting.jpg" alt="A sitting dog placeholder">
-                <p>Add as many photos as you like</p>
-            </div>
-        </section>
-    </main>
+  <h1>Lightbox Starter</h1>
+  <p class="subtitle">Click any thumbnail below. Escape or click the backdrop to close.</p>
 
-    <footer>
-        <p>Deployed to AWS S3 — Cloud Web App Engineering, 2026</p>
-    </footer>
+  <!-- Gallery markup — the thumbnails the lightbox code hooks into -->
+  <div class="gallery">
+    <img class="gallery__thumb" src="images/sample-1.svg" alt="Sample 1">
+    <img class="gallery__thumb" src="images/sample-2.svg" alt="Sample 2">
+    <img class="gallery__thumb" src="images/sample-3.svg" alt="Sample 3">
+  </div>
+
+  <!-- Lightbox container — hidden until opened -->
+  <div class="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <img class="lightbox__img" src="" alt="">
+    <div class="lightbox__caption"></div>
+  </div>
+
+  <script src="js/lightbox.js"></script>
 </body>
 </html>
