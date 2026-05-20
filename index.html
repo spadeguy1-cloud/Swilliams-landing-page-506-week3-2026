@@ -18,27 +18,100 @@
 
     <main>
         <section class="gallery">
-            <div class="photo">
+            <div class="photo" data-index="0">
                 <img src="images/cat-sleeping.jpg" alt="A sleeping cat placeholder">
                 <p>Replace this with your own photo and caption</p>
             </div>
-            <div class="photo">
+            <div class="photo" data-index="1">
                 <img src="images/dog-happy.jpg" alt="A happy dog placeholder">
                 <p>These are placeholder images — swap them out!</p>
             </div>
-            <div class="photo">
+            <div class="photo" data-index="2">
                 <img src="images/cat-curious.jpg" alt="A curious cat placeholder">
                 <p>Use your own travel, pet, food, or project photos</p>
             </div>
-            <div class="photo">
+            <div class="photo" data-index="3">
                 <img src="images/dog-sitting.jpg" alt="A sitting dog placeholder">
                 <p>Add as many photos as you like</p>
             </div>
         </section>
+
     </main>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" style="display:none">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+        <button class="lightbox-prev" id="lightbox-prev" aria-label="Previous image">&#8249;</button>
+        <button class="lightbox-next" id="lightbox-next" aria-label="Next image">&#8250;</button>
+        <figure class="lightbox-content">
+            <img id="lightbox-img" src="" alt="">
+            <figcaption id="lightbox-caption"></figcaption>
+        </figure>
+    </div>
 
     <footer>
         <p>Deployed to AWS S3 — Cloud Web App Engineering, 2026</p>
     </footer>
+
+    <script>
+        (function () {
+            var photos = Array.from(document.querySelectorAll('.gallery .photo'));
+            var lightbox = document.getElementById('lightbox');
+            var lbImg = document.getElementById('lightbox-img');
+            var lbCaption = document.getElementById('lightbox-caption');
+            var current = 0;
+            var isOpen = false;
+
+            function lbShow(index) {
+                current = (index + photos.length) % photos.length;
+                var photo = photos[current];
+                lbImg.src = photo.querySelector('img').src;
+                lbImg.alt = photo.querySelector('img').alt;
+                lbCaption.textContent = photo.querySelector('p').textContent;
+                lightbox.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+                isOpen = true;
+                document.getElementById('lightbox-close').focus();
+            }
+
+            function lbHide() {
+                lightbox.style.display = 'none';
+                document.body.style.overflow = '';
+                isOpen = false;
+            }
+
+            photos.forEach(function (photo, i) {
+                photo.style.cursor = 'zoom-in';
+                photo.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    lbShow(i);
+                });
+            });
+
+            document.getElementById('lightbox-close').addEventListener('click', function (e) {
+                e.stopPropagation();
+                lbHide();
+            });
+            document.getElementById('lightbox-prev').addEventListener('click', function (e) {
+                e.stopPropagation();
+                lbShow(current - 1);
+            });
+            document.getElementById('lightbox-next').addEventListener('click', function (e) {
+                e.stopPropagation();
+                lbShow(current + 1);
+            });
+
+            lightbox.addEventListener('click', function (e) {
+                if (e.target === lightbox) lbHide();
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (!isOpen) return;
+                if (e.key === 'Escape') lbHide();
+                if (e.key === 'ArrowLeft') lbShow(current - 1);
+                if (e.key === 'ArrowRight') lbShow(current + 1);
+            });
+        })();
+    </script>
 </body>
 </html>
